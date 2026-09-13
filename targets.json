@@ -1,0 +1,37 @@
+[
+  {
+    "id": "target_1",
+    "query": "estudios de arquitectura chiclayo",
+    "city": "Chiclayo",
+    "category": "Arquitectura & Diseño",
+    "active": true
+  },
+  {
+    "id": "target_2",
+    "query": "diseño de interiores chiclayo lambayeque",
+    "city": "Chiclayo",
+    "category": "Diseño de Interiores",
+    "active": true
+  },
+  {
+    "id": "target_3",
+    "query": "constructoras y remodelaciones chiclayo",
+    "city": "Chiclayo",
+    "category": "Construcción & Remodelación",
+    "active": true
+  },
+  {
+    "id": "target_4",
+    "query": "estudio de arquitectura piura",
+    "city": "Piura",
+    "category": "Arquitectura & Diseño",
+    "active": true
+  },
+  {
+    "id": "target_5",
+    "query": "estudio de arquitectura trujillo la libertad",
+    "city": "Trujillo",
+    "category": "Arquitectura & Diseño",
+    "active": true
+  }
+]

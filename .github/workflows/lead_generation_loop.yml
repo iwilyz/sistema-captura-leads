@@ -1,0 +1,45 @@
+name: 🔄 Rutina Automática de Captura de Leads
+
+on:
+  # 1. Ejecución programada: Cada lunes a las 8:00 AM (Hora Perú / 13:00 UTC)
+  schedule:
+    - cron: '0 13 * * 1'
+
+  # 2. Ejecución manual: Permite presionar un botón 'Run workflow' en GitHub cuando quieras
+  workflow_dispatch:
+    inputs:
+      max_leads:
+        description: 'Cantidad máxima de leads nuevos a capturar'
+        required: false
+        default: '10'
+
+jobs:
+  capture-and-sync:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write  # Permite guardar el estado de rotación (loop_state.json)
+
+    steps:
+      - name: 📥 Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 🚀 Ejecutar Loop de Prospección
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: |
+          python auto_loop.py
+
+      - name: 💾 Guardar memoria de rotación (loop_state.json)
+        run: |
+          git config --global user.name "Lead Capture Bot"
+          git config --global user.email "bot@leadcapture.local"
+          git add loop_state.json
+          git commit -m "chore: actualizar estado de rotación de targets [skip ci]" || echo "No changes to commit"
+          git push || echo "No changes to push"
