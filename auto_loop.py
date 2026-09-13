@@ -251,5 +251,6 @@ class LeadAutoLoop:
 
 
 if __name__ == "__main__":
+    max_leads_env = int(os.environ.get("MAX_LEADS", "8"))
     loop = LeadAutoLoop()
-    loop.run(max_new_leads=5)
+    loop.run(max_new_leads=max_leads_env)

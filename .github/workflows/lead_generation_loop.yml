@@ -1,9 +1,9 @@
 name: 🔄 Rutina Automática de Captura de Leads
 
 on:
-  # 1. Ejecución programada: Cada lunes a las 8:00 AM (Hora Perú / 13:00 UTC)
+  # 1. Ejecución programada: De Lunes a Viernes a las 8:00 AM (Hora Perú / 13:00 UTC)
   schedule:
-    - cron: '0 13 * * 1'
+    - cron: '0 13 * * 1-5'
 
   # 2. Ejecución manual: Permite presionar un botón 'Run workflow' en GitHub cuando quieras
   workflow_dispatch:
