@@ -120,7 +120,8 @@ class NotionCRM:
                 "Ciudad": {"select": {"options": [{"name": "Chiclayo", "color": "default"}]}},
                 "Rubro": {"select": {"options": [{"name": "Arquitectura & Diseño", "color": "brown"}]}},
                 "Dirección": {"rich_text": {}},
-                "Notas": {"rich_text": {}}
+                "Notas": {"rich_text": {}},
+                "Mensaje Preparado": {"rich_text": {}}
             }
         }
         res = self._request("databases", method="POST", data=payload)
@@ -193,6 +194,11 @@ class NotionCRM:
         if lead.get("notes"):
             properties["Notas"] = {
                 "rich_text": [{"text": {"content": lead["notes"]}}]
+            }
+
+        if lead.get("prepared_message"):
+            properties["Mensaje Preparado"] = {
+                "rich_text": [{"text": {"content": lead["prepared_message"]}}]
             }
 
         payload = {

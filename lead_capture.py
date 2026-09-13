@@ -1,3 +1,4 @@
+import message_generator
 """
 lead_capture.py
 ---------------
@@ -49,14 +50,19 @@ class LeadCapturePipeline:
         return raw_phone.strip() if raw_phone else None
 
     @staticmethod
-    def build_whatsapp_link(phone: str) -> Optional[str]:
-        """Crea el enlace wa.me para abrir WhatsApp con un clic."""
+    def build_whatsapp_link(phone: str, text: Optional[str] = None) -> Optional[str]:
+        """Crea el enlace wa.me para abrir WhatsApp con un clic (con texto opcional pre-cargado)."""
         digits = re.sub(r"\D", "", phone or "")
+        full_num = None
         if len(digits) == 9 and digits.startswith("9"):
-            return f"https://wa.me/51{digits}"
-        if len(digits) == 11 and digits.startswith("519"):
-            return f"https://wa.me/{digits}"
-        return None
+            full_num = f"51{digits}"
+        elif len(digits) == 11 and digits.startswith("519"):
+            full_num = digits
+        if not full_num:
+            return None
+        if text:
+            return f"https://wa.me/{full_num}?text={urllib.parse.quote(text)}"
+        return f"https://wa.me/{full_num}"
 
     def extract_emails_from_url(self, url: str) -> List[str]:
         """Visita una URL e intenta extraer correos electrónicos de contacto."""
@@ -85,16 +91,31 @@ class LeadCapturePipeline:
             return []
 
     def process_and_save(self, leads: List[Dict[str, Any]], sync_notion: bool = True) -> List[Dict[str, Any]]:
-        """Normaliza los datos de cada lead y opcionalmente los envía a Notion."""
+        """Normaliza los datos de cada lead, genera el mensaje de contacto y opcionalmente los envía a Notion."""
         processed = []
-        for l in leads:
+        for idx, l in enumerate(leads):
             item = dict(l)
             # Normalizar teléfono
             if item.get("phone"):
                 item["phone"] = self.normalize_phone_pe(item["phone"])
-            # Generar WhatsApp
-            if not item.get("whatsapp") and item.get("phone"):
-                item["whatsapp"] = self.build_whatsapp_link(item["phone"])
+
+            # Generar automáticamente Mensaje Preparado y enlace WhatsApp 1-Clic
+            name = item.get("name", "")
+            cat = item.get("category", "Arquitectura & Diseño")
+            prepared_msg = message_generator.generar_mensaje(name, cat, idx)
+            item["prepared_message"] = prepared_msg
+
+            if item.get("phone"):
+                wa_url, is_valid_mobile = message_generator.obtener_link_whatsapp(item["phone"], prepared_msg)
+                if is_valid_mobile:
+                    item["whatsapp"] = wa_url
+                else:
+                    item["whatsapp"] = None
+                    note_fix = "⚠️ Teléfono Fijo (074) - Llamar directo o email."
+                    if not item.get("notes"):
+                        item["notes"] = note_fix
+                    elif note_fix not in item["notes"]:
+                        item["notes"] += f" | {note_fix}"
 
             # Si no tiene correo y tiene web, buscarlo
             if not item.get("email") and item.get("website"):
