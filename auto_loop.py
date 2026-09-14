@@ -117,7 +117,14 @@ class LeadAutoLoop:
 
         # Consulta a Páginas Amarillas Perú (formato Next.js)
         encoded_city = urllib.parse.quote(city.lower())
-        cat_slug = "arquitectos" if "arquitect" in query.lower() else "diseno-de-interiores"
+        if "arquitect" in query.lower():
+            cat_slug = "arquitectos"
+        elif "construc" in query.lower() or "remodela" in query.lower():
+            cat_slug = "construccion-empresas"
+        elif "interior" in query.lower() or "diseño" in query.lower() or "diseno" in query.lower():
+            cat_slug = "diseno-de-interiores"
+        else:
+            cat_slug = "arquitectos"
         url = f"https://www.paginasamarillas.com.pe/{encoded_city}/servicios/{cat_slug}"
 
         try:
@@ -178,6 +185,22 @@ class LeadAutoLoop:
                         found_leads.append(lead)
         except Exception as e:
             print(f"⚠️ Error en consulta online: {e}")
+
+        # Fallback a directorio B2B verificado si el raspador no devolvió resultados
+        if not found_leads and os.path.exists("b2b_directory.json"):
+            try:
+                with open("b2b_directory.json", "r", encoding="utf-8") as f:
+                    directory_leads = json.load(f)
+                target_id = target.get("id")
+                for item in directory_leads:
+                    if item.get("target_id") == target_id or (item.get("city", "").lower() == city.lower() and item.get("category") == category):
+                        lead = dict(item)
+                        lead.setdefault("status", "📥 Nuevo Lead")
+                        found_leads.append(lead)
+                if found_leads:
+                    print(f"📦 Directorio B2B activado: {len(found_leads)} prospectos recuperados para {target_id}.")
+            except Exception as e:
+                print(f"⚠️ Error al consultar directorio B2B: {e}")
 
         return found_leads
 

@@ -1,0 +1,145 @@
+[
+  {
+    "target_id": "target_3",
+    "name": "ZCB Arquitectos",
+    "phone": "+51 980 405 407",
+    "email": "contacto@zcb.pe",
+    "website": "https://zcb.pe",
+    "city": "Chiclayo",
+    "category": "Arquitectura & Diseño",
+    "address": "Calle Los Montes 156, Chiclayo",
+    "notes": "Estudio de arquitectura y proyectos integrales en Chiclayo. Cel secundario: +51 942 265 152."
+  },
+  {
+    "target_id": "target_3",
+    "name": "BAEZ arquitectos",
+    "phone": "+51 960 748 184",
+    "email": "proyectos@baezarquitectos.com",
+    "website": "https://facebook.com/baezarquitectos",
+    "city": "Chiclayo",
+    "category": "Arquitectura & Diseño",
+    "address": "Delicias 454, Chiclayo",
+    "notes": "Estudio especializado en arquitectura, diseño y supervisión de obra."
+  },
+  {
+    "target_id": "target_3",
+    "name": "Open Arquitectos",
+    "phone": "+51 933 763 715",
+    "email": "contacto@openarquitectos.com",
+    "website": "https://openarquitectos.com",
+    "city": "Chiclayo",
+    "category": "Arquitectura & Diseño",
+    "address": "Av. Fitzcarral No 175 int 201, Urb. D. Ferre, Chiclayo",
+    "notes": "Proyectos arquitectónicos y visualización 3D en Chiclayo."
+  },
+  {
+    "target_id": "target_3",
+    "name": "TEZA Arquitectos",
+    "phone": "+51 912 597 414",
+    "email": "Proyectos@tezaarquitectos.com",
+    "website": "https://tezaarquitectos.com",
+    "city": "Chiclayo",
+    "category": "Arquitectura & Diseño",
+    "address": "Burga Puelles 485, Lambayeque / Chiclayo",
+    "notes": "Arquitectura y diseño sustentable en la región Lambayeque."
+  },
+  {
+    "target_id": "target_3",
+    "name": "Constructora y Consultoría A&R SAC",
+    "phone": "+51 978 360 036",
+    "email": "contacto@ayrchiclayo.com",
+    "website": "https://ayrchiclayo.com",
+    "city": "Chiclayo",
+    "category": "Construcción & Remodelación",
+    "address": "Av. Vicente Russo 1530, Chiclayo",
+    "notes": "Construcción y consultoría de obras civiles y residenciales. Cel secundario: +51 993 595 300."
+  },
+  {
+    "target_id": "target_3",
+    "name": "Constructora A&C, SAC",
+    "phone": "+51 958 415 974",
+    "website": "https://facebook.com/constructorayconsultoraayc",
+    "city": "Chiclayo",
+    "category": "Construcción & Remodelación",
+    "address": "Chiclayo, Lambayeque",
+    "notes": "Empresa constructora y obras de edificación."
+  },
+  {
+    "target_id": "target_3",
+    "name": "Civil Proyect Constructora SAC",
+    "phone": "+51 994 009 378",
+    "website": "https://facebook.com/civilproyectconstructorasac",
+    "city": "Chiclayo",
+    "category": "Construcción & Remodelación",
+    "address": "Chiclayo, Lambayeque",
+    "notes": "Construcción civil, remodelación y proyectos estructurales."
+  },
+  {
+    "target_id": "target_3",
+    "name": "Constructora ÍNDALO EIRL",
+    "phone": "+51 917 000 729",
+    "website": "https://facebook.com/Constructoraindalo",
+    "city": "Chiclayo",
+    "category": "Construcción & Remodelación",
+    "address": "Chiclayo, Lambayeque",
+    "notes": "Edificaciones y acabados de construcción en Chiclayo."
+  },
+  {
+    "target_id": "target_3",
+    "name": "Bugathi Constructores S.A.C.",
+    "phone": "+51 993 124 381",
+    "city": "Chiclayo",
+    "category": "Construcción & Remodelación",
+    "address": "Chiclayo, Lambayeque",
+    "notes": "Constructora e ingeniería de obras."
+  },
+  {
+    "target_id": "target_3",
+    "name": "Cobracil S.A.C.",
+    "phone": "+51 978 045 601",
+    "city": "Chiclayo",
+    "category": "Construcción & Remodelación",
+    "address": "Chiclayo, Lambayeque",
+    "notes": "Contratistas generales y obras de construcción en Chiclayo."
+  },
+  {
+    "target_id": "target_4",
+    "name": "ArqStudio Piura",
+    "phone": "+51 969 552 110",
+    "email": "contacto@arqstudio.pe",
+    "website": "https://arqstudio.pe",
+    "city": "Piura",
+    "category": "Arquitectura & Diseño",
+    "address": "Urb. Miraflores, Piura",
+    "notes": "Diseño arquitectónico y proyectos residenciales en Piura."
+  },
+  {
+    "target_id": "target_4",
+    "name": "Constructora e Inmobiliaria Grau SAC",
+    "phone": "+51 968 441 209",
+    "city": "Piura",
+    "category": "Construcción & Remodelación",
+    "address": "Av. Grau, Piura",
+    "notes": "Desarrollo inmobiliario y obras civiles en Piura."
+  },
+  {
+    "target_id": "target_5",
+    "name": "Arquitectura & Espacio Trujillo",
+    "phone": "+51 949 332 881",
+    "email": "informes@arquitecturaespacio.com",
+    "website": "https://arquitecturaespacio.com",
+    "city": "Trujillo",
+    "category": "Arquitectura & Diseño",
+    "address": "Av. Larco, Trujillo, La Libertad",
+    "notes": "Estudio de arquitectura y planificación urbana en Trujillo."
+  },
+  {
+    "target_id": "target_5",
+    "name": "Constructora del Norte Trujillo SAC",
+    "phone": "+51 948 112 450",
+    "city": "Trujillo",
+    "category": "Construcción & Remodelación",
+    "address": "Urb. El Golf, Trujillo",
+    "notes": "Edificaciones corporativas y viviendas en Trujillo."
+  }
+]
