@@ -40,10 +40,11 @@ def procesar_nuevos_leads(dry_run: bool = True):
         props = lead.get("properties", {})
         nombre = props.get("Nombre", {}).get("title", [{}])[0].get("text", {}).get("content", "Sin Nombre")
         rubro = props.get("Rubro", {}).get("select", {}).get("name", "Arquitectura & Diseño")
+        ciudad = props.get("Ciudad", {}).get("select", {}).get("name", "Chiclayo")
         phone = props.get("Teléfono", {}).get("phone_number", "")
         
-        # Generar mensaje personalizado y enlace
-        mensaje = message_generator.generar_mensaje(nombre, rubro, idx)
+        # Generar mensaje personalizado y enlace adaptado por ciudad
+        mensaje = message_generator.generar_mensaje(nombre, rubro, idx, ciudad=ciudad)
         wa_link, es_valido = message_generator.obtener_link_whatsapp(phone, mensaje)
         
         print(f"───────────────────────────────────────────────────────────────────")

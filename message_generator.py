@@ -64,7 +64,7 @@ def limpiar_nombre_contacto(raw_name: str) -> Tuple[str, str, bool]:
     return f"al equipo de {nombre_limpio}", nombre_limpio, False
 
 
-def generar_mensaje(nombre_raw: str, rubro: str = "Arquitectura & Diseño", index: int = 0) -> str:
+def generar_mensaje(nombre_raw: str, rubro: str = "Arquitectura & Diseño", index: int = 0, ciudad: str = "Chiclayo") -> str:
     """
     Genera el primer mensaje de contacto personalizado con anclaje en Barcelona
     y rotación dinámica de frases para proteger contra bloqueos algorítmicos.
@@ -93,14 +93,15 @@ def generar_mensaje(nombre_raw: str, rubro: str = "Arquitectura & Diseño", inde
     
     apertura = aperturas_persona[index % len(aperturas_persona)] if es_persona else aperturas_empresa[index % len(aperturas_empresa)]
     
-    # 2. Mención local Chiclayo
+    # 2. Mención local personalizada por ciudad
+    ciudad_clean = (ciudad or "Chiclayo").strip()
     if es_persona:
-        mencion_local = "Sigo el trabajo y los proyectos que vienes desarrollando en Chiclayo, y justamente por eso quería escribirte:"
+        mencion_local = f"Sigo el trabajo y los proyectos que vienes desarrollando en {ciudad_clean}, y justamente por eso quería escribirte:"
     else:
         menciones = [
-            f"Sigo de cerca el trabajo y los proyectos que vienen desarrollando en Chiclayo con {nombre_estudio}, y por eso quería escribirles:",
-            f"Conozco los proyectos y la trayectoria que vienen consolidando en Chiclayo, y por esa razón quería ponerme en contacto:",
-            f"Vengo siguiendo de cerca el portafolio y las obras que impulsan en Chiclayo, y justamente por ello les escribo:"
+            f"Sigo de cerca el trabajo y los proyectos que vienen desarrollando en {ciudad_clean} con {nombre_estudio}, y por eso quería escribirles:",
+            f"Conozco los proyectos y la trayectoria que vienen consolidando en {ciudad_clean}, y por esa razón quería ponerme en contacto:",
+            f"Vengo siguiendo de cerca el portafolio y las obras que impulsan en {ciudad_clean}, y justamente por ello les escribo:"
         ]
         mencion_local = menciones[index % len(menciones)]
         

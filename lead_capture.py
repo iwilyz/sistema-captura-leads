@@ -102,7 +102,8 @@ class LeadCapturePipeline:
             # Generar automáticamente Mensaje Preparado y enlace WhatsApp 1-Clic
             name = item.get("name", "")
             cat = item.get("category", "Arquitectura & Diseño")
-            prepared_msg = message_generator.generar_mensaje(name, cat, idx)
+            city = item.get("city", "Chiclayo")
+            prepared_msg = message_generator.generar_mensaje(name, cat, idx, ciudad=city)
             item["prepared_message"] = prepared_msg
 
             if item.get("phone"):
@@ -111,7 +112,7 @@ class LeadCapturePipeline:
                     item["whatsapp"] = wa_url
                 else:
                     item["whatsapp"] = None
-                    note_fix = "⚠️ Teléfono Fijo (074) - Llamar directo o email."
+                    note_fix = f"⚠️ Teléfono Fijo ({city}) - Llamar directo o email."
                     if not item.get("notes"):
                         item["notes"] = note_fix
                     elif note_fix not in item["notes"]:
