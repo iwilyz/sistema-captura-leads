@@ -141,18 +141,18 @@ def generar_mensaje(nombre_raw: str, rubro: str = "Arquitectura & Diseño", inde
         ]
         adjunto = adjuntos[index % len(adjuntos)]
         
-    # 5. Autoridad (Web) y Canal de Difusión
+    # 5. Enlace directo a la misión (Smart City Expo 2026) y Canal de Difusión
     if es_persona:
         web_y_canal = (
-            "Para que conozcas más sobre mi trayectoria y lo que desarrollamos desde acá:\n"
-            "🌐 https://josezegarra.es\n\n"
+            "Puedes revisar el programa completo y los detalles de la misión aquí:\n"
+            "🌐 https://josezegarra.es/misiones/smart-city-expo-2026\n\n"
             "Y si deseas seguir tendencias e innovación en arquitectura y construcción por Europa sin compromiso, abrí este canal de difusión oficial:\n"
             "📲 https://whatsapp.com/channel/0029Vb9Sald2Jl8D9S2Uzp1q"
         )
     else:
         web_y_canal = (
-            "Para que conozcan más sobre mi trayectoria y lo que desarrollamos desde acá:\n"
-            "🌐 https://josezegarra.es\n\n"
+            "Pueden revisar el programa completo y los detalles de la misión aquí:\n"
+            "🌐 https://josezegarra.es/misiones/smart-city-expo-2026\n\n"
             "Y si desean seguir tendencias e innovación en arquitectura y construcción por Europa sin compromiso, abrí este canal de difusión oficial:\n"
             "📲 https://whatsapp.com/channel/0029Vb9Sald2Jl8D9S2Uzp1q"
         )
