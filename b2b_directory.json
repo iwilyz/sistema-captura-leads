@@ -85,24 +85,6 @@
     "notes": "Edificaciones y acabados de construcción en Chiclayo."
   },
   {
-    "target_id": "target_3",
-    "name": "Bugathi Constructores S.A.C.",
-    "phone": "+51 993 124 381",
-    "city": "Chiclayo",
-    "category": "Construcción & Remodelación",
-    "address": "Chiclayo, Lambayeque",
-    "notes": "Constructora e ingeniería de obras."
-  },
-  {
-    "target_id": "target_3",
-    "name": "Cobracil S.A.C.",
-    "phone": "+51 978 045 601",
-    "city": "Chiclayo",
-    "category": "Construcción & Remodelación",
-    "address": "Chiclayo, Lambayeque",
-    "notes": "Contratistas generales y obras de construcción en Chiclayo."
-  },
-  {
     "target_id": "target_4",
     "name": "ArqStudio Piura",
     "phone": "+51 969 552 110",
@@ -124,14 +106,60 @@
   },
   {
     "target_id": "target_5",
-    "name": "Arquitectura & Espacio Trujillo",
-    "phone": "+51 949 332 881",
-    "email": "informes@arquitecturaespacio.com",
-    "website": "https://arquitecturaespacio.com",
+    "name": "COARI Arquitectos",
+    "phone": "+51 997 683 933",
+    "email": "informes@coariarq.com",
     "city": "Trujillo",
     "category": "Arquitectura & Diseño",
-    "address": "Av. Larco, Trujillo, La Libertad",
-    "notes": "Estudio de arquitectura y planificación urbana en Trujillo."
+    "address": "Trujillo, La Libertad",
+    "notes": "Estudio de arquitectura, ingeniería y construcción de proyectos residenciales."
+  },
+  {
+    "target_id": "target_5",
+    "name": "Arcom Proyectos",
+    "phone": "+51 964 903 814",
+    "city": "Trujillo",
+    "category": "Arquitectura & Diseño",
+    "address": "Trujillo, La Libertad",
+    "notes": "Diseño arquitectónico, asesoría y remodelaciones comerciales."
+  },
+  {
+    "target_id": "target_5",
+    "name": "Fernando Freire Arquitecto",
+    "phone": "+51 998 162 020",
+    "email": "info@fernandofreirearquitecto.com",
+    "city": "Trujillo",
+    "category": "Arquitectura & Diseño",
+    "address": "Jr. Diego de Almagro 301, Centro Cívico, Trujillo",
+    "notes": "Estudio de arquitectura y diseño contemporáneo en Trujillo."
+  },
+  {
+    "target_id": "target_5",
+    "name": "AR Edificaciones",
+    "phone": "+51 919 603 633",
+    "city": "Trujillo",
+    "category": "Arquitectura & Diseño",
+    "address": "Trujillo, La Libertad",
+    "notes": "Proyectos arquitectónicos, edificación y supervisión de obra."
+  },
+  {
+    "target_id": "target_5",
+    "name": "ARAM Arquitectos Trujillo",
+    "phone": "+51 961 812 245",
+    "website": "https://aram.pe",
+    "city": "Trujillo",
+    "category": "Arquitectura & Diseño",
+    "address": "Trujillo, La Libertad",
+    "notes": "Diseño y desarrollo de proyectos residenciales y comerciales en el norte."
+  },
+  {
+    "target_id": "target_5",
+    "name": "Jav Ingenieros Constructores",
+    "phone": "+51 980 701 101",
+    "city": "Trujillo",
+    "category": "Construcción & Remodelación",
+    "address": "Trujillo, La Libertad",
+    "notes": "Construcción civil y subcontratación de proyectos en Trujillo."
   },
   {
     "target_id": "target_5",
