@@ -153,8 +153,10 @@ class NotionCRM:
             digits = "".join(filter(str.isdigit, lead["phone"]))
             if len(digits) == 9 and digits.startswith("9"):
                 digits = f"51{digits}"
-            if digits:
+            if len(digits) == 11 and digits.startswith("519"):
                 whatsapp_url = f"https://wa.me/{digits}"
+            else:
+                whatsapp_url = None
 
         properties = {
             "Nombre": {
